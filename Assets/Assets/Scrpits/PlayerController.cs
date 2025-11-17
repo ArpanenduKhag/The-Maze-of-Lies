@@ -12,6 +12,9 @@ public class PlayerController : MonoBehaviour
     public float groundRadius = 0.2f;
     public LayerMask groundLayer;
 
+    [Header("Model Flip")]
+    public Transform model;   // <- Add this and assign "Rig" in Inspector
+
     private Rigidbody2D rb;
     private float moveInput;
     public bool isGrounded;
@@ -32,6 +35,16 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         moveInput = Input.GetAxisRaw("Horizontal");
+
+        // Flip player model based on movement direction
+        if (moveInput > 0)
+        {
+            model.localScale = new Vector3(1, 1, 1);   // Face right
+        }
+        else if (moveInput < 0)
+        {
+            model.localScale = new Vector3(-1, 1, 1);  // Face left
+        }
 
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
