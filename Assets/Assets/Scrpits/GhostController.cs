@@ -5,20 +5,32 @@ public class GhostController : MonoBehaviour
 {
     public float speed = 2f;
     private int direction = 1;
+
     private Rigidbody2D rb;
+    private Animator anim;
+
+    private bool isAttacking = false;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
 
         rb.bodyType = RigidbodyType2D.Dynamic;
-        rb.gravityScale = 2f;          
-        rb.freezeRotation = true;      
+        rb.gravityScale = 2f;
+        rb.freezeRotation = true;
     }
 
     private void FixedUpdate()
     {
-        rb.linearVelocity = new Vector2(direction * speed, rb.linearVelocity.y);
+        if (!isAttacking)
+        {
+            rb.linearVelocity = new Vector2(direction * speed, rb.linearVelocity.y);
+        }
+
+        // Update moving state
+        bool moving = Mathf.Abs(rb.linearVelocity.x) > 0.1f;
+        anim.SetBool("isMoving", moving);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -49,7 +61,26 @@ public class GhostController : MonoBehaviour
         PlayerController player = other.GetComponentInParent<PlayerController>();
         if (player != null)
         {
+            StartAttack();
             player.Die();
         }
+    }
+
+    private void StartAttack()
+    {
+        isAttacking = true;
+        anim.SetBool("isAttacking", true);
+
+        // Stop walking
+        rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
+
+        // Return to walk after attack animation
+        Invoke(nameof(StopAttack), 0.25f);
+    }
+
+    private void StopAttack()
+    {
+        isAttacking = false;
+        anim.SetBool("isAttacking", false);
     }
 }
