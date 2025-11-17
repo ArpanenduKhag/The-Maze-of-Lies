@@ -8,6 +8,8 @@ TagManager:
   - Door
   - Button
   - Clone
+  - Ghost
+  - Slash
   layers:
   - Default
   - TransparentFX
@@ -19,7 +21,7 @@ TagManager:
   - Spikes
   - Ground
   - Ghost
-  - 
+  - Clone
   - 
   - 
   - 

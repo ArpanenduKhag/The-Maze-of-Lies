@@ -6,7 +6,13 @@ public class PlayerAnimator : MonoBehaviour
 
     private bool attackTriggered = false;
 
-    public void UpdateStates(float moveInput, float verticalVelocity, bool grounded, bool againstDoor, bool doorOpen)
+    public void UpdateStates(
+        float moveInput,
+        float verticalVelocity,
+        bool grounded,
+        bool againstDoor,
+        bool doorOpen
+    )
     {
         animator.SetFloat("speed", Mathf.Abs(moveInput));
         animator.SetFloat("verticalVelocity", verticalVelocity);
@@ -15,8 +21,7 @@ public class PlayerAnimator : MonoBehaviour
         animator.SetBool("isAgainstDoor", againstDoor);
         animator.SetBool("isDoorOpen", doorOpen);
 
-        // --- ZOMBIE ATTACK LOGIC ---
-        // Trigger attack ONCE when pushing a closed door
+        // --- ZOMBIE ATTACK LOGIC (for pushing closed door) ---
         if (againstDoor && !doorOpen && grounded && Mathf.Abs(moveInput) > 0.1f)
         {
             if (!attackTriggered)
@@ -27,8 +32,13 @@ public class PlayerAnimator : MonoBehaviour
         }
         else
         {
-            // Reset trigger lock once player stops pushing
             attackTriggered = false;
         }
+    }
+
+    // ⭐ NEW: Called by PlayerController to play slash attack animation
+    public void TriggerSlash()
+    {
+        animator.SetTrigger("Slash");
     }
 }

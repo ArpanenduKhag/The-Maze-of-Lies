@@ -4,7 +4,7 @@ using UnityEngine;
 public class GhostController : MonoBehaviour
 {
     public float speed = 2f;
-    private int direction = 1;
+    public int direction = 1;
 
     private Rigidbody2D rb;
     private Animator anim;
@@ -28,25 +28,15 @@ public class GhostController : MonoBehaviour
             rb.linearVelocity = new Vector2(direction * speed, rb.linearVelocity.y);
         }
 
-        // Update moving state
-        bool moving = Mathf.Abs(rb.linearVelocity.x) > 0.1f;
-        anim.SetBool("isMoving", moving);
+        // moving animation
+        anim.SetBool("isMoving", Mathf.Abs(rb.linearVelocity.x) > 0.1f);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    // Called by the front sensor
+    public void FlipDirection()
     {
-        Vector2 normal = collision.contacts[0].normal;
-
-        if (normal.x < -0.5f)
-        {
-            direction = -1;
-            Flip();
-        }
-        else if (normal.x > 0.5f)
-        {
-            direction = 1;
-            Flip();
-        }
+        direction *= -1;
+        Flip();
     }
 
     private void Flip()
@@ -56,26 +46,22 @@ public class GhostController : MonoBehaviour
         transform.localScale = scale;
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    // Called by the sensor when hitting the player
+    public void AttackPlayer(PlayerController player)
     {
-        PlayerController player = other.GetComponentInParent<PlayerController>();
-        if (player != null)
-        {
-            StartAttack();
-            player.Die();
-        }
-    }
+        if (isAttacking) return;
 
-    private void StartAttack()
-    {
         isAttacking = true;
         anim.SetBool("isAttacking", true);
 
-        // Stop walking
+        // stop moving
         rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
 
-        // Return to walk after attack animation
-        Invoke(nameof(StopAttack), 0.25f);
+        // kill player
+        player.Die();
+
+        // return to walking
+        Invoke(nameof(StopAttack), 0.3f);
     }
 
     private void StopAttack()

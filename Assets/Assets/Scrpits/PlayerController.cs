@@ -3,7 +3,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerController : MonoBehaviour
 {
-    [Header("Movement")]
+    [Header("Movement Settings")]
     public float moveSpeed = 7f;
     public float jumpForce = 12f;
 
@@ -13,26 +13,35 @@ public class PlayerController : MonoBehaviour
     public LayerMask groundLayer;
 
     [Header("Model Flip")]
-    public Transform model;   // Assign your "Rig" here in Inspector
+    public Transform model;
 
     private Rigidbody2D rb;
     private float moveInput;
-    public bool isGrounded;
-
+    private bool isGrounded;
     private PlayerAnimator anim;
 
-    // Door interaction variables
+
+    // ---------- DOOR INTERACTION ----------
     private bool isAgainstDoor = false;
     private bool isDoorOpen = false;
-    private float doorDirection = 0f; // +1 = door is right, -1 = door is left
+    private float doorDirection = 0f;
 
 
-    // -----------------------------
-    //       DEATH SYSTEM
-    // -----------------------------
-    [Header("Death & Ghost")]
+    // ---------- LIVES / DEATH ----------
+    [Header("Death / Lives")]
     public GameObject ghostPrefab;
     private bool isDead = false;
+
+    public int maxLives = 3;
+    public int currentLives = 3;
+
+
+    // ---------- SLASH ATTACK ----------
+    [Header("Slash Attack")]
+    public GameObject slashPrefab;      // damage hitbox
+    public GameObject slashVFX;         // explosion slash particle VFX
+    public float slashCooldown = 0.3f;
+    private bool canSlash = true;
 
 
     private void Start()
@@ -44,22 +53,23 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        if (isDead) return;
+
         moveInput = Input.GetAxisRaw("Horizontal");
 
-        // Flip player model based on movement direction
+        // Flip visual model
         if (moveInput > 0)
-        {
-            model.localScale = new Vector3(1, 1, 1);   // Face right
-        }
+            model.localScale = new Vector3(1, 1, 1);
         else if (moveInput < 0)
-        {
-            model.localScale = new Vector3(-1, 1, 1);  // Face left
-        }
+            model.localScale = new Vector3(-1, 1, 1);
 
-        if (Input.GetButtonDown("Jump") && isGrounded && !isDead)
-        {
+        // Jump
+        if (Input.GetButtonDown("Jump") && isGrounded)
             Jump();
-        }
+
+        // Slash
+        if (Input.GetKeyDown(KeyCode.X) && canSlash)
+            Slash();
 
         anim?.UpdateStates(
             moveInput,
@@ -73,51 +83,84 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (isDead) 
+        if (isDead)
         {
             rb.linearVelocity = Vector2.zero;
             return;
         }
 
-        // If touching a CLOSED door, only block movement TOWARDS the door
+        // Door blocking
         if (isAgainstDoor && !isDoorOpen)
         {
-            // Moving toward door (right)
-            if (moveInput > 0 && doorDirection > 0)
+            bool pushingRight = moveInput > 0 && doorDirection > 0;
+            bool pushingLeft = moveInput < 0 && doorDirection < 0;
+
+            if (pushingRight || pushingLeft)
             {
                 rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
                 return;
             }
-
-            // Moving toward door (left)
-            if (moveInput < 0 && doorDirection < 0)
-            {
-                rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
-                return;
-            }
-
-            // Allowed to move away from the door
-            rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
-        }
-        else
-        {
-            // Normal movement
-            rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
         }
 
+        // Normal movement
+        rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
+
+        // Ground check
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, groundLayer);
     }
 
 
-    void Jump()
+    private void Jump()
     {
         rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
     }
 
 
-    // ---------------------------------------------------------
-    // DOOR INTERACTION (Called from Door.cs)
-    // ---------------------------------------------------------
+    // ---------- SLASH ----------
+    private void Slash()
+    {
+        if (!canSlash) return;
+        canSlash = false;
+
+        // ----------------------------------
+        // SPAWN SLASH HITBOX (damage)
+        // ----------------------------------
+        Vector3 hitboxPos = transform.position +
+                            new Vector3(model.localScale.x * 0.6f, 0, 0);
+
+        GameObject hitbox = Instantiate(slashPrefab, hitboxPos, Quaternion.identity);
+
+        Vector3 hitScale = hitbox.transform.localScale;
+        hitScale.x = model.localScale.x;
+        hitbox.transform.localScale = hitScale;
+
+
+        // ----------------------------------
+        // SPAWN SLASH VFX (particles only)
+        // ----------------------------------
+        if (slashVFX != null)
+        {
+            Vector3 vfxPos = transform.position +
+                             new Vector3(model.localScale.x * 0.4f, 0, 0);
+
+            GameObject vfx = Instantiate(slashVFX, vfxPos, Quaternion.identity);
+
+            if (model.localScale.x < 0)
+                vfx.transform.rotation = Quaternion.Euler(0, 180, 0);
+
+            Destroy(vfx, 1.5f);
+        }
+
+        Invoke(nameof(ResetSlash), slashCooldown);
+    }
+
+    private void ResetSlash()
+    {
+        canSlash = true;
+    }
+
+
+    // ---------- DOOR ----------
     public void SetDoorInteraction(bool touchingDoor, bool doorIsOpen, float doorX)
     {
         isAgainstDoor = touchingDoor;
@@ -130,34 +173,39 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    // ---------------------------------------------------------
-    //                     DEATH SYSTEM
-    // ---------------------------------------------------------
+    // ---------- DEATH ----------
     public void Die()
     {
-        if (isDead) return; // prevent double death
+        if (isDead) return;
         isDead = true;
 
-        // Spawn ghost at death position
-        if (ghostPrefab != null)
-            Instantiate(ghostPrefab, transform.position, Quaternion.identity);
+        currentLives--;
 
-        // Disable movement temporarily
+        // SPAWN NEW GHOST & COUNT IT
+        if (ghostPrefab != null)
+        {
+            Instantiate(ghostPrefab, transform.position, Quaternion.identity);
+            GhostManager_Level3.Instance.GhostSpawned();
+        }
+
+        if (currentLives <= 0)
+        {
+            Debug.Log("GAME OVER!");
+            LevelManager.Instance.ResetLevel();
+            return;
+        }
+
         rb.linearVelocity = Vector2.zero;
         rb.bodyType = RigidbodyType2D.Kinematic;
         GetComponent<Collider2D>().enabled = false;
 
-        // Respawn shortly
         Invoke(nameof(Respawn), 0.15f);
     }
 
-
     private void Respawn()
     {
-        // Move player to spawn point
         transform.position = LevelManager.Instance.spawnPoint.position;
 
-        // Restore movement
         rb.bodyType = RigidbodyType2D.Dynamic;
         GetComponent<Collider2D>().enabled = true;
 
