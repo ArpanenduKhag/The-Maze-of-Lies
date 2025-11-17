@@ -187,364 +187,34 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Gemini_Generated_Image_ty10s5ty10s5ty10-removebg-preview_0
+      name: Spike_0
       rect:
         serializedVersion: 2
-        x: 96
-        y: 455
-        width: 37
-        height: 30
+        x: 98
+        y: 456
+        width: 33
+        height: 28
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 6625f8aef3f58a9a0800000000000000
-      internalID: -6221618157089500570
+      spriteID: 563aa093e30177648878b896dfab5825
+      internalID: 453824802
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Gemini_Generated_Image_ty10s5ty10s5ty10-removebg-preview_1
+      name: Spike_1
       rect:
         serializedVersion: 2
-        x: 232
-        y: 455
-        width: 36
-        height: 15
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1a2629cdd3a3d6260800000000000000
-      internalID: 7092389025546396321
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Gemini_Generated_Image_ty10s5ty10s5ty10-removebg-preview_2
-      rect:
-        serializedVersion: 2
-        x: 322
-        y: 457
-        width: 115
-        height: 39
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2f440924885b0df70800000000000000
-      internalID: 9210060834809595122
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Gemini_Generated_Image_ty10s5ty10s5ty10-removebg-preview_3
-      rect:
-        serializedVersion: 2
-        x: 56
-        y: 336
-        width: 108
-        height: 103
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 85bc5df4098b0ae90800000000000000
-      internalID: -7016405289489020072
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Gemini_Generated_Image_ty10s5ty10s5ty10-removebg-preview_4
-      rect:
-        serializedVersion: 2
-        x: 197
-        y: 342
-        width: 107
-        height: 109
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 672c8930f8d2d9cb0800000000000000
-      internalID: -4855674730971610506
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Gemini_Generated_Image_ty10s5ty10s5ty10-removebg-preview_5
-      rect:
-        serializedVersion: 2
-        x: 331
-        y: 284
-        width: 167
-        height: 167
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 191f52a770f7f5d80800000000000000
-      internalID: -8259743521483394671
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Gemini_Generated_Image_ty10s5ty10s5ty10-removebg-preview_6
-      rect:
-        serializedVersion: 2
-        x: 62
-        y: 279
-        width: 79
-        height: 46
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e53cd586f380d1c10800000000000000
-      internalID: 2025784475813528414
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Gemini_Generated_Image_ty10s5ty10s5ty10-removebg-preview_7
-      rect:
-        serializedVersion: 2
-        x: 170
-        y: 266
-        width: 140
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e29dd87df1b8c4c50800000000000000
-      internalID: 6650843718596024622
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Gemini_Generated_Image_ty10s5ty10s5ty10-removebg-preview_8
-      rect:
-        serializedVersion: 2
-        x: 354
-        y: 252
-        width: 84
-        height: 75
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 55c6bc8a80b3e2d80800000000000000
-      internalID: -8273610557055341483
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Gemini_Generated_Image_ty10s5ty10s5ty10-removebg-preview_9
-      rect:
-        serializedVersion: 2
-        x: 12
-        y: 6
-        width: 165
-        height: 127
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: fc86201a801514920800000000000000
-      internalID: 2972746326544115919
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Gemini_Generated_Image_ty10s5ty10s5ty10-removebg-preview_10
-      rect:
-        serializedVersion: 2
-        x: 29
-        y: 137
-        width: 142
-        height: 117
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 02f4a3c6a2225cbe0800000000000000
-      internalID: -1457721338784755936
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Gemini_Generated_Image_ty10s5ty10s5ty10-removebg-preview_11
-      rect:
-        serializedVersion: 2
-        x: 179
-        y: 137
-        width: 130
-        height: 99
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 514e1437ffa89da60800000000000000
-      internalID: 7699337867721565205
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Gemini_Generated_Image_ty10s5ty10s5ty10-removebg-preview_12
-      rect:
-        serializedVersion: 2
-        x: 187
-        y: 56
-        width: 122
-        height: 77
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f4c6c6307268096f0800000000000000
-      internalID: -679896041613661105
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Gemini_Generated_Image_ty10s5ty10s5ty10-removebg-preview_13
-      rect:
-        serializedVersion: 2
-        x: 317
-        y: 133
-        width: 181
-        height: 98
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ac6b3c9d997d32da0800000000000000
-      internalID: -5970691625179695414
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Gemini_Generated_Image_ty10s5ty10s5ty10-removebg-preview_14
-      rect:
-        serializedVersion: 2
-        x: 324
-        y: 39
-        width: 150
-        height: 94
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 35d4941bbc4a77e80800000000000000
-      internalID: -8180889003335529133
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Gemini_Generated_Image_ty10s5ty10s5ty10-removebg-preview_15
-      rect:
-        serializedVersion: 2
-        x: 168
-        y: 11
-        width: 127
-        height: 23
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 93c2e23f1bd8a7b20800000000000000
-      internalID: 3132972286218218553
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Gemini_Generated_Image_ty10s5ty10s5ty10-removebg-preview_16
-      rect:
-        serializedVersion: 2
-        x: 296
-        y: 20
-        width: 46
+        x: 234
+        y: 456
+        width: 33
         height: 13
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -552,10 +222,384 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 2ae8610945efb13f0800000000000000
-      internalID: -928869258973770078
+      spriteID: d9ce59b7e191d5741b6d9329bf3b0f68
+      internalID: -1338544775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spike_2
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 459
+        width: 113
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd8ba7c00d9ebba4488ecf05f7d027b2
+      internalID: -1643162409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spike_3
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 337
+        width: 106
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ee21cb2d9a37d142b0aa5ca97247140
+      internalID: 145739362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spike_4
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 281
+        width: 77
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d78a112dfe932504a8a21e1c51fe8f35
+      internalID: -1488319823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spike_5
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 267
+        width: 138
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57d28c369ac67e044a3cec94c3d2095e
+      internalID: 1101127824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spike_6
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 343
+        width: 104
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a5eb86b77426a349834c4fd0a0ae717
+      internalID: 514937521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spike_7
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 285
+        width: 165
+        height: 165
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a80308e1316c0942b2ba37c6baf8970
+      internalID: -889221795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spike_8
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 253
+        width: 82
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ba92be287a0eb64ebb9b9c4102cbeab
+      internalID: -638858092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spike_9
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 139
+        width: 140
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8ff61f0ccd67004096a8e5a40d08d56
+      internalID: -1716838001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spike_10
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 139
+        width: 128
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20f6858fcbc669b4794f674321aef48b
+      internalID: -752212169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spike_11
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 134
+        width: 178
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae6d1d5b8e527a945987bff23e6a6ef4
+      internalID: 646751560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spike_12
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 7
+        width: 163
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5af274886d81c114d88c2c46676e1b6e
+      internalID: 1270468728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spike_13
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 57
+        width: 120
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3ec9e6b941af7d41965188fb048a9d5
+      internalID: -1306127459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spike_14
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 40
+        width: 148
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca7880991c4b35146889bd933f00dabc
+      internalID: 753541536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spike_15
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 12
+        width: 58
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 961b22acb7abe784fb090aab5b8ddecc
+      internalID: 1642254432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spike_16
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 22
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76364ebbc4e2aa04ab09ee3f18e4fc0d
+      internalID: 458478588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spike_17
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 15
+        width: 59
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92df686503314f84998aafd70f4d4ef9
+      internalID: 904363240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spike_18
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 22
+        width: 44
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 330d82ce05cceea409e6e2cb904a47ab
+      internalID: 1432339078
       vertices: []
       indices: 
       edges: []
@@ -564,7 +608,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: dd180603dd57e2b43bbbe80a848817c4
     internalID: 0
     vertices: []
     indices: 
@@ -574,23 +618,25 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Gemini_Generated_Image_ty10s5ty10s5ty10-removebg-preview_0: -6221618157089500570
-      Gemini_Generated_Image_ty10s5ty10s5ty10-removebg-preview_1: 7092389025546396321
-      Gemini_Generated_Image_ty10s5ty10s5ty10-removebg-preview_10: -1457721338784755936
-      Gemini_Generated_Image_ty10s5ty10s5ty10-removebg-preview_11: 7699337867721565205
-      Gemini_Generated_Image_ty10s5ty10s5ty10-removebg-preview_12: -679896041613661105
-      Gemini_Generated_Image_ty10s5ty10s5ty10-removebg-preview_13: -5970691625179695414
-      Gemini_Generated_Image_ty10s5ty10s5ty10-removebg-preview_14: -8180889003335529133
-      Gemini_Generated_Image_ty10s5ty10s5ty10-removebg-preview_15: 3132972286218218553
-      Gemini_Generated_Image_ty10s5ty10s5ty10-removebg-preview_16: -928869258973770078
-      Gemini_Generated_Image_ty10s5ty10s5ty10-removebg-preview_2: 9210060834809595122
-      Gemini_Generated_Image_ty10s5ty10s5ty10-removebg-preview_3: -7016405289489020072
-      Gemini_Generated_Image_ty10s5ty10s5ty10-removebg-preview_4: -4855674730971610506
-      Gemini_Generated_Image_ty10s5ty10s5ty10-removebg-preview_5: -8259743521483394671
-      Gemini_Generated_Image_ty10s5ty10s5ty10-removebg-preview_6: 2025784475813528414
-      Gemini_Generated_Image_ty10s5ty10s5ty10-removebg-preview_7: 6650843718596024622
-      Gemini_Generated_Image_ty10s5ty10s5ty10-removebg-preview_8: -8273610557055341483
-      Gemini_Generated_Image_ty10s5ty10s5ty10-removebg-preview_9: 2972746326544115919
+      Spike_0: 453824802
+      Spike_1: -1338544775
+      Spike_10: -752212169
+      Spike_11: 646751560
+      Spike_12: 1270468728
+      Spike_13: -1306127459
+      Spike_14: 753541536
+      Spike_15: 1642254432
+      Spike_16: 458478588
+      Spike_17: 904363240
+      Spike_18: 1432339078
+      Spike_2: -1643162409
+      Spike_3: 145739362
+      Spike_4: -1488319823
+      Spike_5: 1101127824
+      Spike_6: 514937521
+      Spike_7: -889221795
+      Spike_8: -638858092
+      Spike_9: -1716838001
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
