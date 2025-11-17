@@ -897,12 +897,12 @@ GameObject:
   - component: {fileID: 1941641179823346113}
   - component: {fileID: 6332972952119178658}
   - component: {fileID: 2702899647372629888}
-  - component: {fileID: 8028641604809169450}
+  - component: {fileID: 6705401147881842994}
   - component: {fileID: 3686177948889710115}
   - component: {fileID: 4761805204993721656}
   m_Layer: 3
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -973,8 +973,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!61 &8028641604809169450
-BoxCollider2D:
+--- !u!70 &6705401147881842994
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -983,7 +983,7 @@ BoxCollider2D:
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: f424bc96762314e42951b5c6b0a458b0, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -1007,18 +1007,9 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.02258052, y: -0.15635669}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 0.9618406, y: 1.5906808}
-  m_EdgeRadius: 0
+  m_Offset: {x: -0.018043995, y: -0.16239643}
+  m_Size: {x: 0.536088, y: 1.7578497}
+  m_Direction: 0
 --- !u!114 &3686177948889710115
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1031,13 +1022,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09175b60936e95948816617f5af70657, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  moveSpeed: 3
   jumpForce: 12
   groundCheck: {fileID: 2817211838806128201}
   groundRadius: 0.5
   groundLayer:
     serializedVersion: 2
     m_Bits: 256
+  model: {fileID: 5776888346556552800}
   isGrounded: 0
 --- !u!114 &4761805204993721656
 MonoBehaviour:
