@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     public LayerMask groundLayer;
 
     [Header("Model Flip")]
-    public Transform model;   // <- Add this and assign "Rig" in Inspector
+    public Transform model;   // Assign your "Rig" here in Inspector
 
     private Rigidbody2D rb;
     private float moveInput;
@@ -26,11 +26,21 @@ public class PlayerController : MonoBehaviour
     private bool isDoorOpen = false;
     private float doorDirection = 0f; // +1 = door is right, -1 = door is left
 
+
+    // -----------------------------
+    //       DEATH SYSTEM
+    // -----------------------------
+    [Header("Death & Ghost")]
+    public GameObject ghostPrefab;
+    private bool isDead = false;
+
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<PlayerAnimator>();
     }
+
 
     private void Update()
     {
@@ -46,7 +56,7 @@ public class PlayerController : MonoBehaviour
             model.localScale = new Vector3(-1, 1, 1);  // Face left
         }
 
-        if (Input.GetButtonDown("Jump") && isGrounded)
+        if (Input.GetButtonDown("Jump") && isGrounded && !isDead)
         {
             Jump();
         }
@@ -60,9 +70,16 @@ public class PlayerController : MonoBehaviour
         );
     }
 
+
     private void FixedUpdate()
     {
-        // If touching a closed door, only block movement TOWARDS the door
+        if (isDead) 
+        {
+            rb.linearVelocity = Vector2.zero;
+            return;
+        }
+
+        // If touching a CLOSED door, only block movement TOWARDS the door
         if (isAgainstDoor && !isDoorOpen)
         {
             // Moving toward door (right)
@@ -91,21 +108,59 @@ public class PlayerController : MonoBehaviour
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, groundLayer);
     }
 
+
     void Jump()
     {
         rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
     }
 
-    // Called by Door.cs
+
+    // ---------------------------------------------------------
+    // DOOR INTERACTION (Called from Door.cs)
+    // ---------------------------------------------------------
     public void SetDoorInteraction(bool touchingDoor, bool doorIsOpen, float doorX)
     {
         isAgainstDoor = touchingDoor;
         isDoorOpen = doorIsOpen;
-    
+
         if (touchingDoor)
             doorDirection = Mathf.Sign(doorX - transform.position.x);
         else
             doorDirection = 0f;
     }
 
+
+    // ---------------------------------------------------------
+    //                     DEATH SYSTEM
+    // ---------------------------------------------------------
+    public void Die()
+    {
+        if (isDead) return; // prevent double death
+        isDead = true;
+
+        // Spawn ghost at death position
+        if (ghostPrefab != null)
+            Instantiate(ghostPrefab, transform.position, Quaternion.identity);
+
+        // Disable movement temporarily
+        rb.linearVelocity = Vector2.zero;
+        rb.bodyType = RigidbodyType2D.Kinematic;
+        GetComponent<Collider2D>().enabled = false;
+
+        // Respawn shortly
+        Invoke(nameof(Respawn), 0.15f);
+    }
+
+
+    private void Respawn()
+    {
+        // Move player to spawn point
+        transform.position = LevelManager.Instance.spawnPoint.position;
+
+        // Restore movement
+        rb.bodyType = RigidbodyType2D.Dynamic;
+        GetComponent<Collider2D>().enabled = true;
+
+        isDead = false;
+    }
 }
