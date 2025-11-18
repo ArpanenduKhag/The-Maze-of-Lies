@@ -55,7 +55,9 @@ public class PlayerController : MonoBehaviour
     {
         if (isDead) return;
 
-        moveInput = Input.GetAxisRaw("Horizontal");
+        float mobile = MobileInput.Instance != null ? MobileInput.Instance.horizontal : 0;
+        float keyboard = Input.GetAxisRaw("Horizontal");
+        moveInput = Mathf.Abs(keyboard) > 0 ? keyboard : mobile;
 
         // Flip visual model
         if (moveInput > 0)
@@ -64,11 +66,11 @@ public class PlayerController : MonoBehaviour
             model.localScale = new Vector3(-1, 1, 1);
 
         // Jump
-        if (Input.GetButtonDown("Jump") && isGrounded)
+        if ((Input.GetButtonDown("Jump") || MobileInput.Instance.jumpPressed) && isGrounded)
             Jump();
 
         // Slash
-        if (Input.GetKeyDown(KeyCode.X) && canSlash)
+        if ((Input.GetKeyDown(KeyCode.X) || MobileInput.Instance.slashPressed) && canSlash)
             Slash();
 
         anim?.UpdateStates(
